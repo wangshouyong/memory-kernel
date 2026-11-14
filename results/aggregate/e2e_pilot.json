@@ -1,0 +1,38 @@
+{
+ "caliber": "single machine; concurrency covers retrieval+gate only; generation non-deterministic",
+ "dataset": {
+  "kind": "internal_desensitized",
+  "n": 40
+ },
+ "limitations": [
+  "generation quality gap",
+  "concurrency excludes real generation"
+ ],
+ "metrics": {
+  "claims_total": 102,
+  "cold_gate_s": 5.34,
+  "concurrency_errors": 0,
+  "concurrency_requests": 400,
+  "degraded_claims": 37,
+  "generation_p50_s": 28.5,
+  "judge_fail_cases": {
+   "hits": 8,
+   "n": 10
+  },
+  "pilot_completed": {
+   "hits": 39,
+   "n": 40
+  },
+  "rejected_claims": 12,
+  "throughput_rps": 206.2,
+  "ui_badge_matches_audit": {
+   "hits": 39,
+   "n": 39
+  },
+  "verified_claims": 53,
+  "warm_gate_p50_ms": 17.5,
+  "warm_gate_p95_ms": 61.5
+ },
+ "name": "end-to-end pilot (single machine)",
+ "source_report": "docs/public/EVAL-RESULTS.md"
+}

@@ -1,0 +1,39 @@
+{
+ "caliber": "caliber A: coverage/over-restraint on citable-assertion classes; diagnostic all-claim caliber not acceptance",
+ "dataset": {
+  "kind": "internal_desensitized",
+  "n": 153
+ },
+ "limitations": [
+  "single model/prompt version",
+  "semantic correctness not covered"
+ ],
+ "metrics": {
+  "citation_precision_loose": {
+   "hits": 200,
+   "n": 203
+  },
+  "citation_precision_strict": {
+   "hits": 192,
+   "n": 203
+  },
+  "coverage_assertion_classes": {
+   "hits": 178,
+   "n": 186
+  },
+  "decoy_adoption": {
+   "hits": 0,
+   "n": 4
+  },
+  "over_restraint_assertion_classes": {
+   "hits": 2,
+   "n": 58
+  },
+  "parse_failure": {
+   "hits": 0,
+   "n": 153
+  }
+ },
+ "name": "LLM-in-the-loop citation rates",
+ "source_report": "docs/public/EVAL-RESULTS.md"
+}

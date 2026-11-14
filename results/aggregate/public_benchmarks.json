@@ -1,0 +1,48 @@
+{
+ "caliber": "retrieval/enforcement layer only; not official QA scores; candidate pools differ",
+ "dataset": {
+  "kind": "public",
+  "n": 500
+ },
+ "limitations": [
+  "MAB adapted chunk-level weak gold, not official",
+  "LME-CN cross-lingual caliber retired",
+  "TimlMemBench pools 8.1/8.5 make R@10 near ceiling"
+ ],
+ "metrics": {
+  "longmemeval_cn_r10": {
+   "hits": 354,
+   "n": 500
+  },
+  "longmemeval_session_r10": {
+   "hits": 476,
+   "n": 500
+  },
+  "memoryagentbench_ar_r10": {
+   "hits": 151,
+   "n": 188
+  },
+  "memoryagentbench_cr_r10": {
+   "hits": 438,
+   "n": 784
+  },
+  "timlmembench_gov_strict10_en": {
+   "hits": 602,
+   "n": 736
+  },
+  "timlmembench_gov_strict10_zh": {
+   "hits": 899,
+   "n": 979
+  },
+  "timlmembench_strict10_en": {
+   "hits": 482,
+   "n": 736
+  },
+  "timlmembench_strict10_zh": {
+   "hits": 713,
+   "n": 979
+  }
+ },
+ "name": "public retrieval benchmarks (retrieval layer only)",
+ "source_report": "docs/public/EVAL-RESULTS.md"
+}

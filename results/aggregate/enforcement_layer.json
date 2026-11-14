@@ -1,0 +1,40 @@
+{
+ "caliber": "verified=strict; degraded counts as loose; single-claim latency CPU in-process",
+ "dataset": {
+  "kind": "internal_synthetic",
+  "n": 71
+ },
+ "limitations": [
+  "latency not reproducible across machines",
+  "tamper check is deterministic, no rate metric"
+ ],
+ "metrics": {
+  "enforcement_latency_us_per_claim": 589.1,
+  "fpr_strict": {
+   "hits": 0,
+   "n": 71
+  },
+  "negation_flip": {
+   "hits": 7,
+   "n": 7
+  },
+  "over_citation_attributable": {
+   "hits": 19,
+   "n": 19
+  },
+  "scenario_attributable": {
+   "hits": 13,
+   "n": 13
+  },
+  "tpr_loose": {
+   "hits": 29,
+   "n": 32
+  },
+  "tpr_strict": {
+   "hits": 13,
+   "n": 32
+  }
+ },
+ "name": "citation-enforcement (minimal loop)",
+ "source_report": "docs/public/EVAL-RESULTS.md"
+}

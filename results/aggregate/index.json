@@ -1,0 +1,15 @@
+{
+ "caliber": "aggregated numbers only; no probes, no raw records, no paths",
+ "dataset": {
+  "kind": "public",
+  "n": 9
+ },
+ "limitations": [
+  "derived from internal evaluation reports; same-source not verbatim"
+ ],
+ "metrics": {
+  "files": 9
+ },
+ "name": "aggregate-results-manifest",
+ "source_report": "docs/public/EVAL-RESULTS.md"
+}

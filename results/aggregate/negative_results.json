@@ -1,0 +1,24 @@
+{
+ "caliber": "each item has its own pre-registered gate; failures reported as-is",
+ "dataset": {
+  "kind": "internal_desensitized",
+  "n": 153
+ },
+ "limitations": [
+  "different n per item",
+  "some gates required +8pp and were not met"
+ ],
+ "metrics": {
+  "assistant_gold_r3_delta_pp": -7.15,
+  "cross_session_dense_max_gain_pp": 0.65,
+  "graph_walk_top30_recall": 0.3,
+  "prf_po_r10_after": 0.8316,
+  "rerank_v2_r3_delta_pp": 5.88,
+  "reranker_r3_after": 0.804,
+  "reranker_r3_before": 0.856,
+  "role_classifier_assistant_recall": 0.15,
+  "same_session_r10_in_sample": 0.9673
+ },
+ "name": "negative results (tried and dropped)",
+ "source_report": "docs/public/EVAL-RESULTS.md"
+}

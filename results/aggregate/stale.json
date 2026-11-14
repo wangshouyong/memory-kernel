@@ -1,0 +1,27 @@
+{
+ "caliber": "language-agnostic rerun, shared-token>=2, control uses unrelated M_new; old 0/400 is artifact and must not be cited",
+ "dataset": {
+  "kind": "public",
+  "n": 400
+ },
+ "limitations": [
+  "English STALE only",
+  "non-random control construction",
+  "TPR~FPR => no discriminative power"
+ ],
+ "metrics": {
+  "control_zero_token_overlap": 340,
+  "fisher_p": 0.659,
+  "fpr_hits": 9,
+  "fpr_rate": 0.0225,
+  "fpr_wilson_high": 0.0422,
+  "fpr_wilson_low": 0.0119,
+  "tpr_hits": 12,
+  "tpr_rate": 0.03,
+  "tpr_wilson_high": 0.0517,
+  "tpr_wilson_low": 0.0172,
+  "zero_token_overlap": 334
+ },
+ "name": "STALE implicit conflict (language-agnostic rerun)",
+ "source_report": "docs/public/EVAL-RESULTS.md"
+}

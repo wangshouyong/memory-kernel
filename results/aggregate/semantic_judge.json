@@ -1,0 +1,27 @@
+{
+ "caliber": "two judges, consensus; residual reported as upper bound only",
+ "dataset": {
+  "kind": "internal_synthetic",
+  "n": 52
+ },
+ "limitations": [
+  "speaker-mismatch strict 0/6",
+  "specificity gap from paraphrase cases",
+  "n small"
+ ],
+ "metrics": {
+  "agreement": 0.769,
+  "calibration_errors": 0,
+  "calibration_judgments": 104,
+  "consensus_lenient_sensitivity": 0.913,
+  "consensus_specificity": 0.588,
+  "consensus_strict_sensitivity": 0.696,
+  "judged_claims": 51,
+  "judged_supported": 51,
+  "judgments": 102,
+  "kappa": 0.644,
+  "semantic_residual_upper95": 0.07
+ },
+ "name": "semantic judge + negative calibration",
+ "source_report": "docs/public/EVAL-RESULTS.md"
+}

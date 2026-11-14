@@ -1,0 +1,32 @@
+{
+ "caliber": "claim->evidence probes; same-session 96.7% is in-sample and forbidden; always report candidate pool",
+ "dataset": {
+  "kind": "internal_desensitized",
+  "n": 153
+ },
+ "limitations": [
+  "claim->evidence not question->evidence",
+  "latency single-process CPU",
+  "stale IDF experiment uses 2% build corpus"
+ ],
+ "metrics": {
+  "candidates_messages": 8219,
+  "candidates_sessions": 502,
+  "debiased_r10": 0.6429,
+  "gate_p50_ms": 2.9,
+  "gate_p95_ms": 33.77,
+  "latency_full_library_ms": 546.27,
+  "latency_pure_two_route_ms": 0.84,
+  "po_r10": 0.8632,
+  "po_r50": 0.9053,
+  "r1": 0.5033,
+  "r10": 0.7778,
+  "r3": 0.6863,
+  "r50": 0.8235,
+  "session_route_overall_r10": 0.7908,
+  "session_route_po_r10": 0.8737,
+  "stale_idf_2pct_r10": 0.6863
+ },
+ "name": "retrieval (cross-session full library)",
+ "source_report": "docs/public/EVAL-RESULTS.md"
+}

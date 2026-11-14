@@ -1,0 +1,25 @@
+{
+ "caliber": "ontology/test-once on frozen artifact; value test-once; dense routing test n=150 once",
+ "dataset": {
+  "kind": "internal_synthetic",
+  "n": 240
+ },
+ "limitations": [
+  "ontology test constructed by implementer, boundary-enriched",
+  "routing test one-shot"
+ ],
+ "metrics": {
+  "dense_global_preference_r10_change_pp": -11.1,
+  "dense_routing_overall_r10": 0.5565,
+  "dense_routing_preference_r10": 0.519,
+  "ontology_attribute_recall": 0.9917,
+  "ontology_n_verified_slots": 119,
+  "ontology_state_accuracy": 0.9958,
+  "ontology_verified_attr_accuracy": 1.0,
+  "value_v1_match_model_arm": 0.717,
+  "value_v1_match_model_norm_arm": 0.9623,
+  "value_v1_match_rule_arm": 0.9811
+ },
+ "name": "Plan Z ontology/value/dense routing",
+ "source_report": "docs/public/EVAL-RESULTS.md"
+}

@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "memory-kernel"
+version = "0.1.0"
+description = "Deterministic citation enforcement for long-term memory (append-only ledger + enforcement layer)."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [{ name = "memory-kernel contributors" }]
+dependencies = []
+
+[tool.setuptools]
+packages = ["memory_kernel"]
