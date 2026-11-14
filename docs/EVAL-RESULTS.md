@@ -1,6 +1,8 @@
 # Evaluation results (aggregated only — no probes)
 
-> **公开版（public edition）**：仅保留对外可发布的契约与口径；不含私有路径、真实聊天片段、任务编号或逐题评测产物。
+> **** 本文件只发布**聚合数字 + 口径 + 数据来源说明**。
+> **不发布**逐条探针、真实聊天片段、私有语料路径、模型权重、逐题评测产物。
+> 机器可读聚合见 `results/aggregate/*.json`（同口径、只含数字/标签）。
 
 数据来源分三类（每节标注）：
 - `public`：公开基准数据集（如 LongMemEval、TimlMemBench、STALE），只报检索/判定层指标，与官方 QA 指标不可并列；
@@ -76,7 +78,7 @@
 - 判读：judge 有区分度（对无关/否定基本全中），但仍漏 `N_speaker`（strict 0/6）；特异性缺口集中在转述类
   （"探针构造标签 = 语义真值"不成立）。因此语义指标**只作上界参考**，并需在换 judge/prompt 时重跑校准。
 
-## 6. 检索口径（internal_desensitized；**以 `docs/RETRIEVAL-CALIBER-v1.md` 为准**）
+## 6. 检索口径（internal_desensitized；**以本文 §6 与 `docs/ALGO-CEILING.md` 为准**）
 
 **真实能力口径 = 跨会话全库**（候选 = 全库 **8,219 条消息 / 502 会话**；153 条 claim→evidence 探针）：
 

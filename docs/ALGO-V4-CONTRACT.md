@@ -1,8 +1,6 @@
 # ALGO-V4 契约（固定版）
 
-> **公开版（public edition）**：仅保留对外可发布的契约与口径；不含私有路径、真实聊天片段、任务编号或逐题评测产物。
-
-> 背景：真实中文聊天域评测（`<评测报告，不发布>`）暴露出四个结构性缺口：
+> 背景：真实中文聊天域评测（`评测报告`）暴露出四个结构性缺口：
 > ① 中文否定/时间谓词是英文词表 → 中文否定 0/7 被拦、SQL 里的英文 NOT 反而误杀；
 > ② Tier 1 分词只认 `[A-Za-z]+` → 中文 0 token，判定空转；
 > ③ `Claim.supporting` 不逐条校验 → 过度引用 0/19 可见；
@@ -14,7 +12,7 @@
 > **版本记录（只增不删）**：v4.0（本契约主体）→ v4.1–v4.6（§3.2.1 / §4.1 / §5.1 / §6.1 修订）
 > → **v4.7-meta（2026-11-14 增量补充，见 §9）**：F1 Phase 1 的 `quantifier_generalization` 与
 > `source_attribution` 两条 soft-only 元数据谓词、`SkeletonPolicy.v4_meta()` 入口与封闭映射。
-> 实现侧记录见 `docs/F1-PHASE1.md`；本文补的是**契约条目**，不改任何代码/测试/SPEC。
+> 实现侧记录见 本文 §9；本文补的是**契约条目**，不改任何代码/测试/SPEC。
 
 > **版本矩阵（契约，只增不删）**：`skel-v2.0`（默认）→ `skel-v3.0`（`.v3()`）→
 > `skel-v3.1-C3`（`.v3_c3()`，C3 唯一正式入口；四开为实验配置、不得用于生产）→
@@ -185,7 +183,7 @@ def check_scenario(ledger, claim, ctx: ScenarioContext, *,
 3. `same_fact` = **wide**（`t` 与 `rec` 的内容词交集（扣除更正标记自身 token）≥ `SUPERSEDED_MIN_SHARED_TOKENS=2`）
    **或 narrow**（否定标记后 4 字内重复了 `rec` 的内容词，覆盖「不是昨天」型最小更正）。
 
-阈值实测（`<评测产物，不发布>`）：min_shared=1 → ctrl 误标 2+1 全在；
+阈值实测（`评测产物`）：min_shared=1 → ctrl 误标 2+1 全在；
 min_shared=2 不扣标记 token → 仍有 1 条误标；所选组合是唯一同时满足「ctrl 误标 0 / 正常样本仍拦 /
 既有测试不破」的配置。方向性：词面判据对"真被更正但零词重合"的样本仍会漏（假阴性）。
 
@@ -257,13 +255,13 @@ degraded + `degrade_reason="scenario_superseded"`，由 `emit.py` 渲染为「�
    - 4 个场景谓词各 1 正 1 反；`context=None` 时结果与 v3 逐字节一致；
    - 默认策略（`SkeletonPolicy()`）在所有新用例上行为与改动前一致。
 3. `python -m unittest discover -s tests` 全绿（既有 + 新增）。
-4. `python `<评测脚本，不随仓库发布>` 退出码 0。
-5. 不得修改 `<固定评测产物，不随仓库发布>` 下任何文件。
+4. `python `实现脚本` 退出码 0。
+5. 不得修改 `固定评测产物` 下任何文件。
 
 ## 9. v4.7-meta 补齐（2026-11-14；契约条目，仅文档增量）
 
 > 背景：F1 Phase 1 已按取舍选项 C 实现并验收（新增测试、全量测试通过、
-> 评测/数据产物零改动）；能力边界见 `docs/public/ALGO-CEILING.md` 与聚合评测结果。
+> 评测/数据产物零改动）；能力边界见 `docs/ALGO-CEILING.md` 与聚合评测结果。
 > 本文只把实现已固定的条目补进契约；**本节不引入新行为、不改代码/测试/SPEC**。
 > 对应源码（只读引用）：`memory_kernel/{skeleton,obligations,enforce,emit}.py`。
 
@@ -275,7 +273,7 @@ degraded + `degrade_reason="scenario_superseded"`，由 `emit.py` 渲染为「�
 | 唯一正式入口 | `SkeletonPolicy.v4_meta()`：`v4()` 全部开关 + `quantifier=True` + `source_type=True`，`version="skel-v4.7-meta"` |
 | 两开关默认 | `quantifier=False`、`source_type=False`（`SkeletonPolicy()` 仍是 v2.0、`.v4()` 仍是 v4.0） |
 | 派生属性 | `meta_enabled = enabled and (quantifier or source_type)`；`describe()` 仅在 `meta_enabled` 时追加 `meta(quantifier=…, source_type=…)` |
-| 兼容承诺 | 默认路径判定与全部既有固定产物**逐字节不变**；153 探针 v4 判定矩阵指纹与 `results_v4.json` 一致（诚实测见 `F1-PHASE1.md` §4） |
+| 兼容承诺 | 默认路径判定与全部既有固定产物**逐字节不变**；153 探针 v4 判定矩阵指纹与 `results_v4.json` 一致（诚实测见 本文 §9 §4） |
 | 回退 | 不使用 `v4_meta()` 即回到 v4.0（所有新代码路径由两开关守卫） |
 
 ### 9.2 `quantifier_generalization`（soft-only 元数据谓词）
@@ -343,7 +341,7 @@ degraded + `degrade_reason="scenario_superseded"`，由 `emit.py` 渲染为「�
    LLM-in-the-loop（成本 ~2h10m），因此**不得**声称引用精度/覆盖率有提升。
 7. **F1 持久化未实现**：本批只做"按需确定性编译"，不建 F1 表（fact_id/status/supersedes 后置）。
 
-### 9.6 验收口径（与 `docs/F1-PHASE1.md` 一致）
+### 9.6 验收口径（与 本文 §9 一致）
 
 ```bash
 PY="python"
